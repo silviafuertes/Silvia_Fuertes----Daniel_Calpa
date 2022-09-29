@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Aplicacion con Jquery</title>
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.min.css" />
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/funciones.js"></script>
+
+    </head>
+
+</head>
+
+<body>
+    <button id="hider">Ocultar</button>
+    <button id="shower">Mostrar</button>
+
+    <div>
+      <span>
+          <div id="fondo">      
+            <h2>Juego de Memoria</h2>
+            <div id="accordion">
+              <h3>INSTRUCCIÓN 1</h3>
+              <div>
+                <p>
+                    Se debe recordar la secuencia de circulos azules.
+                </p>
+            </div>
+            <h3>INSTRUCCIÓN 2</h3>
+            <div>
+                <p>
+                    Se debe hacer clic repitiendo la secuencia.
+                </p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="ui-widget">
+          <label for="tags">Jugador: </label>
+          <input id="tags">
+        </div>
+        <br>
+        <br>
+        <div class="contenedor">
+        <div class="juego"></div> 
+    </div>
+</div>
+</div>
+</span> 
+</div>
+
+<script>
+    $( "#hider" ).click(function() {
+      $( "span:last-child" ).hide( "fast", function() {
+    // Use arguments.callee so we don't need a named function
+    $( this ).prev().hide( "fast", arguments.callee );
+});
+  });
+    $( "#shower" ).click(function() {
+      $( "span" ).show( 2000 );
+  });
+</script>
+<script>
+    $( function() {
+        $( "#accordion" ).accordion();
+    } );
+</script>
+
+</body>
+</html>
+<style>
+  span {
+
+    padding: 3px;
+    float: left;
+    height: 800px;
+    width: 1500px;
+}
+</style>
+
