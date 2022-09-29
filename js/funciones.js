@@ -133,3 +133,6 @@ $( function() {
     });
   } );
 
+$( function() {
+    $( "#draggable" ).draggable();
+  } );
